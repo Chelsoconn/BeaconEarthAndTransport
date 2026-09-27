@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beacon Earthworks &amp; Transport | Austin &amp; Hill Country Excavation Services</title>
+  <meta name="description" content="Experienced excavation, grading, drainage, trenching, driveway, and site-preparation services in Austin and the Hill Country. 20+ years of heavy-equipment experience. Small 1–3 day projects welcome.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #1a1a1a;
+      --dark: #2b2b2b;
+      --amber: #d4a745;
+      --amber-dark: #b8912e;
+      --light: #f5f2ec;
+      --white: #ffffff;
+      --gray: #888;
+      --text: #333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--charcoal);
+      z-index: 100;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .logo {
+      color: var(--amber);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .logo span { color: var(--white); font-weight: 400; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: 0.2s;
+    }
+
+    /* LOGO STRIP */
+    .logo-strip {
+      background: var(--charcoal);
+      text-align: center;
+      padding: 0;
+      margin-top: 72px;
+    }
+    .logo-strip img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 56px 24px;
+    }
+    .hero-content { max-width: 720px; }
+    .hero h1 {
+      color: var(--white);
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .hero p {
+      color: #ccc;
+      font-size: 17px;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .hero p.welcome-note {
+      color: var(--amber);
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--amber); color: var(--charcoal); }
+    .btn-primary:hover { background: var(--amber-dark); }
+    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--charcoal); }
+
+    /* SECTIONS */
+    section { padding: 72px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--charcoal);
+    }
+    .section-subtitle {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 40px;
+      max-width: 700px;
+    }
+    .accent-bar {
+      width: 48px;
+      height: 3px;
+      background: var(--amber);
+      margin-bottom: 20px;
+    }
+
+    /* SERVICES */
+    .services { background: var(--light); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 28px 24px;
+      border-radius: 6px;
+      border-top: 3px solid var(--amber);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .service-card h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--charcoal);
+    }
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+    }
+    .about-highlights {
+      background: var(--dark);
+      border-radius: 8px;
+      padding: 40px 32px;
+      color: var(--white);
+    }
+    .about-highlights h3 {
+      font-size: 20px;
+      color: var(--amber);
+      margin-bottom: 20px;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .highlight-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--amber);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--charcoal);
+      font-weight: 700;
+    }
+    .highlight-item p {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+    .highlight-item strong { color: var(--white); }
+
+    /* CONTACT */
+    .contact { background: var(--light); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .contact-intro {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 32px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+    .contact-info h3 {
+      font-size: 20px;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--amber);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; fill: var(--charcoal); }
+    .contact-item a, .contact-item span {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .contact-item a:hover { color: var(--amber-dark); }
+    .contact-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gray);
+      display: block;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: inherit;
+      margin-bottom: 16px;
+      transition: border 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--amber);
+    }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: #999;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+    }
+    footer a { color: var(--amber); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--charcoal);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 16px;
+      }
+      .nav-links.open { display: flex; }
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 15px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">BEACON <span>Earthworks &amp; Transport</span></a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:4324661020" style="color:var(--amber)">432-466-1020</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- LOGO STRIP -->
+<div class="logo-strip">
+  <img src="logo.png" alt="Beacon Earthworks &amp; Transport">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Professional Earthworks for <em>Austin &amp; the Hill Country</em></h1>
+    <p>Experienced excavation, grading, drainage, trenching, driveway, and site-preparation services backed by 20+ years of heavy-equipment and construction experience.</p>
+    <p class="welcome-note">Small 1&ndash;3 day projects welcome.</p>
+    <div class="hero-btns">
+      <a href="tel:4324661020" class="btn btn-primary">Call 432-466-1020</a>
+      <a href="#contact" class="btn btn-outline">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="accent-bar"></div>
+    <h2 class="section-title">Earthwork &amp; Site Services</h2>
+    <p class="section-subtitle">We provide experienced heavy-equipment operation for residential, ranch, and small contractor projects throughout Austin and the surrounding Hill Country.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Excavation</h3>
+        <p>Small excavation, trenching, digging, and general earthmoving for residential and contractor projects.</p>
+      </div>
+      <div class="service-card">
+        <h3>Grading &amp; Leveling</h3>
+        <p>Rough and finish grading for drainage correction, building pads, driveways, and landscape preparation.</p>
+      </div>
+      <div class="service-card">
+        <h3>Driveway Grading &amp; Repair</h3>
+        <p>Regrading and base correction for gravel, caliche, and dirt driveways.</p>
+      </div>
+      <div class="service-card">
+        <h3>Drainage &amp; Swales</h3>
+        <p>Drainage grading, swales, culvert work, and site shaping to help move water where it needs to go.</p>
+      </div>
+      <div class="service-card">
+        <h3>Trenching</h3>
+        <p>Trenching for water, electrical, irrigation, and other utility projects, with licensed trades involved where required.</p>
+      </div>
+      <div class="service-card">
+        <h3>Site &amp; Pad Preparation</h3>
+        <p>Light clearing, rough grading, pad preparation, and earthmoving for shops, sheds, residential improvements, and small construction projects.</p>
+      </div>
+      <div class="service-card">
+        <h3>Light Land Clearing</h3>
+        <p>Brush, cedar, and small vegetation clearing for lots, acreage, and property improvements.</p>
+      </div>
+      <div class="service-card">
+        <h3>Equipment Mobilization</h3>
+        <p>We coordinate the appropriate equipment and delivery for your project, so you don&rsquo;t have to arrange separate equipment transportation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="accent-bar"></div>
+        <h2 class="section-title">Why Beacon</h2>
+        <p>Beacon Earthworks &amp; Transport is an owner-led, local Austin-area company focused on reliable service, clear communication, and quality work.</p>
+        <p>With more than 20 years of heavy-equipment and construction experience&mdash;including crane and heavy-equipment operation&mdash;you&rsquo;re working with someone who understands the equipment, jobsite conditions, and what it takes to complete a project safely and efficiently.</p>
+        <p>We intentionally welcome smaller 1&ndash;3 day projects that larger contractors may not prioritize.</p>
+      </div>
+      <div class="about-highlights">
+        <h3>What Sets Us Apart</h3>
+        <div class="highlight-item">
+          <div class="highlight-icon">&#10003;</div>
+          <p><strong>20+ Years of Experience</strong><br>Extensive heavy-equipment and construction background.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">&#10003;</div>
+          <p><strong>Owner-Led Projects</strong><br>Direct communication with the person overseeing the work.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">&#10003;</div>
+          <p><strong>Equipment Coordinated for You</strong><br>The right machine and delivery are arranged as part of the project.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">&#10003;</div>
+          <p><strong>Small Projects Welcome</strong><br>Grading, drainage, driveways, trenching, pads, and other focused earthwork.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">&#10003;</div>
+          <p><strong>Straightforward Estimates</strong><br>Send photos, dimensions, location, and project details for a quick initial review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="accent-bar"></div>
+    <h2 class="section-title">Need Dirt Work Done?</h2>
+    <p class="contact-intro">Send us your project location, 3&ndash;5 photos, approximate dimensions, and a short description of what you need completed. We&rsquo;ll review the scope and let you know the best next step.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:4324661020">432-466-1020</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:info@beaconearthworkstransport.com">info@beaconearthworkstransport.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Serving</span>
+            <span>Austin, Bee Cave, Lakeway, Dripping Springs, Spicewood, Buda, Kyle, Wimberley, San Marcos, Marble Falls, and surrounding Hill Country communities.</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form action="https://formsubmit.co/info@beaconearthworkstransport.com" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry from Beacon website">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Your email">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" required placeholder="Location, dimensions, and description of work needed..."></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;border:none;cursor:pointer;font-family:inherit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Beacon Earthworks &amp; Transport. All rights reserved.</p>
+  <p style="margin-top:6px">Austin &amp; Hill Country, TX &nbsp;|&nbsp; <a href="tel:4324661020">432-466-1020</a> &nbsp;|&nbsp; <a href="mailto:info@beaconearthworkstransport.com">info@beaconearthworkstransport.com</a></p>
+</footer>
+
+</body>
+</html>
